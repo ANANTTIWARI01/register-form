@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 
 export async function studentlogin(req, res) {
   const { email, password } = req.body;
-console.log(email,password);
+// console.log(email,password);
 
   try {
     if (!email || !password) {
@@ -34,7 +34,7 @@ console.log(email,password);
       maxAge: 2 * 60 * 60 * 1000, // 2 hours
     });
 
-    console.log(token);
+    // console.log(token);
     
     return res.status(200).json({ message: "Login successful.", user });
   } catch (error) {
