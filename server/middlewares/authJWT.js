@@ -5,6 +5,7 @@ dotenv.config();
 const authMiddleware = (...tokenKeys) => (req, res, next) => {
   for (const tokenKey of tokenKeys) {
     let token;
+console.log(token);
 
     if (tokenKey === "adminToken") token = req.cookies.adminToken;
     else if (tokenKey === "studentToken") token = req.cookies.studentToken;
