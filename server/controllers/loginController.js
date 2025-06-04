@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 
 export async function studentlogin(req, res) {
   const { email, password } = req.body;
-console.log(email,password);
+// console.log(email,password);
 
   try {
     if (!email || !password) {
@@ -13,7 +13,7 @@ console.log(email,password);
         .status(400)
         .json({ message: "Email and password are required." });
     }
-
+console.log("JWT_SECRET before signing token:", process.env.JWT_SECRET);
     const user = await studentModel.findOne({ email, password });
     
     if (!user) {

@@ -21,6 +21,7 @@ export function AdminProvider({ children }) {
       const res = await instance.get("/auth/checkToken", {
         withCredentials: true,
       });
+      console.log(res);
       
       if (res.status === 200) {   
         setIsAuthenticated(true);
@@ -40,7 +41,7 @@ export function AdminProvider({ children }) {
 
         // console.log(isAuthenticated)
 
-        console.log(res.status);
+        // console.log(res.status);
     } catch (error) {
       console.error("Logout failed:", error);
     }
