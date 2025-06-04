@@ -33,6 +33,7 @@ function StudentLogin() {
         { email, password },
         { withCredentials: true }
       );
+      console.log(response);
 
       if (response.status === 200) {
         const { message, token, role } = response.data;
@@ -48,7 +49,7 @@ function StudentLogin() {
     } catch (error) {
       setMessage(
         error.response?.data?.message ||
-          "Something went wrong. Please try again."
+        "Something went wrong. Please try again."
       );
     } finally {
       setLoading(false);
