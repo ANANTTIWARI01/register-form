@@ -5,7 +5,6 @@ const instance = axios.create({
 });
 export default instance;
 
-
  export const getQuizQuestions = async (testId) => {
   console.log(testId);
   
